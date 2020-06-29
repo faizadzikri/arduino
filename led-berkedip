@@ -1,0 +1,23 @@
+//pin 8 yang di pakai 
+const int pinLED = 8;
+
+void setup(){
+//menjadikan pin 8 sebagai OUTPUT
+  pinMode(pinLED,OUTPUT);
+  
+}
+
+//di bawah code akan di looping terus menerus
+void loop(){
+//menyalakan LED
+digitalWrite(pinLED,HIGH);
+
+//LED menyala selama 500 milisecond
+delay(500);
+
+//mematikan LED 
+digitalWrite(pinLED,LOW);
+
+//LED mati selama 500 milisecond
+delay(500);
+}
