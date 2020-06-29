@@ -7,17 +7,24 @@ void setup(){
   
 }
 
+//awal time delay 1000 milisecond | 1detik
+int timeDelay = 1000;
+
 //di bawah code akan di looping terus menerus
 void loop(){
+//setiap loop akan di kurang 100
+timeDelay = timeDelay - 100;
+
+//jika timeDelay 0 di reset menjadi 1000
+if(timeDelay <= 0){
+timeDelay = 1000;
+}
+
 //menyalakan LED
 digitalWrite(pinLED,HIGH);
-
-//LED menyala selama 500 milisecond
-delay(500);
+delay(timeDelay);
 
 //mematikan LED 
 digitalWrite(pinLED,LOW);
-
-//LED mati selama 500 milisecond
-delay(500);
+delay(timeDelay);
 }
