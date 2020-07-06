@@ -2,9 +2,8 @@
 const int pinLED = 8;
 
 void setup(){
-//menjadikan pin 8 sebagai OUTPUT
-  pinMode(pinLED,OUTPUT);
-  
+  //menjadikan pin 8 sebagai OUTPUT
+  pinMode(pinLED,OUTPUT);  
 }
 
 //awal time delay 1000 milisecond | 1detik
@@ -12,19 +11,23 @@ int timeDelay = 1000;
 
 //di bawah code akan di looping terus menerus
 void loop(){
-//setiap loop akan di kurang 100
-timeDelay = timeDelay - 100;
-
-//jika timeDelay 0 di reset menjadi 1000
-if(timeDelay <= 0){
-timeDelay = 1000;
-}
-
-//menyalakan LED
-digitalWrite(pinLED,HIGH);
-delay(timeDelay);
-
-//mematikan LED 
-digitalWrite(pinLED,LOW);
-delay(timeDelay);
+  //jika timeDelay kurang atau sama dengan 100 akan delay dan di reset menjadi 1000
+  if(timeDelay <= 100){
+    //sebelum di reset lampu akan delay 3 detik
+    delay (3000);
+    //timeDelay di reset menjadi 1 detik
+    timeDelay = 1000;
+  }
+  else{
+    //jika time delay > 100 akan di kurang 100
+    timeDelay = timeDelay - 100;
+  }
+  
+  //menyalakan LED
+  digitalWrite(pinLED,HIGH);
+  delay(timeDelay);
+  
+  //mematikan LED 
+  digitalWrite(pinLED,LOW);
+  delay(timeDelay);
 }
